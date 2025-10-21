@@ -1,3 +1,6 @@
-@props(['active' => "456"])
+@props(['active' => false])
 
-<a {{ $attributes }}> {{ $slot }} {{$active}} </a>
+<a 
+    {{ $attributes->merge(['class' => $active ? 'text-teal-500 font-bold' : ''])}}>
+    {{ $slot }}
+</a>

@@ -1,5 +1,5 @@
 <x-layout>
-    <h1 class="text-white">Welcome here</h1>
+    <h1>Welcome here</h1>
 
     <x-slot:footer>
         <strong>Home page</strong>
