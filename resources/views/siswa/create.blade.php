@@ -1,7 +1,8 @@
 <x-layout>
     <!-- Form diubah untuk Lebar Maksimal (max-w-6xl) dan menghilangkan shadow/border -->
+    <h1 class="text-3xl mb-8 font-extrabold text-gray-800 border-b pb-4">Create Siswa Baru</h1>
     <form class="bg-white px-8 pt-6 pb-8 mb-4 max-w-6xl mx-auto sm:px-12">
-        <h1 class="text-3xl mb-8 font-extrabold text-gray-800 border-b pb-4">Create Siswa Baru</h1>
+        @csrf
         
         <!-- Input Nama Lengkap -->
         <div class="mb-6">
