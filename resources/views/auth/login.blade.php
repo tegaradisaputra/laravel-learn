@@ -22,51 +22,59 @@
                             fill="teal"
                             />
                         </svg>
-                        <h4 class="mb-12 mt-1 pb-1 text-xl font-semibold">
+                        <h4 class="text-black mb-12 mt-1 pb-1 text-xl font-semibold">
                             We are The Lotus Team
                         </h4>
                         </div>
 
                         <form action="{{ route('login') }}" method="POST">
                             @csrf
-                        <p class="mb-4">Please login to your account</p>
-                        <!--Username input-->
-                        <div class="relative mb-4 flex flex-col" data-twe-input-wrapper-init>
-                            <label for="email">Email</label>
-                            <input class="px-2 py-1 w-full border-1 rounded" type="email" name="email" id="email">
-                        </div>
+                            <p class="mb-4 text-black">Please login to your account</p>
+                            <!--Username input-->
+                            <div class="relative mb-4 flex flex-col text-black" data-twe-input-wrapper-init>
+                                <label for="email">Email</label>
+                                <input class="px-2 py-1 w-full border-1 rounded" type="email" name="email" id="email" value="{{ old('email') }}">
 
-                        <!--Password input-->
-                        <div class="relative mb-4" data-twe-input-wrapper-init>
-                            <label for="password">password</label>
-                            <input class="px-2 py-1 w-full border-1 rounded" type="password" name="password" id="password">
-                        </div>
+                                @error('email')
+                                    <div class="text-red-500 text-sm">{{ $message }}</div>
+                                @enderror 
+                            </div>
 
-                        <!--Submit button-->
-                        <div class="mb-12 pb-1 pt-1 text-center">
-                            <button
-                            class="bg-teal-600 cursor-pointer hover:opacity-90 mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-dark-3 transition duration-150 ease-in-out hover:shadow-dark-2 focus:shadow-dark-2 focus:outline-none focus:ring-0 active:shadow-dark-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
-                            type="submit"
-                            data-twe-ripple-init
-                            data-twe-ripple-color="light">
-                            Log in
-                            </button>
+                            <!--Password input-->
+                            <div class="relative mb-4 flex flex-col text-black" data-twe-input-wrapper-init>
+                                <label for="password">password</label>
+                                <input class="px-2 py-1 w-full border-1 rounded" type="password" name="password" id="password">
 
-                            <!--Forgot password link-->
-                            <a href="#!">Forgot password?</a>
-                        </div>
+                                @error('password')
+                                    <div class="text-red-500 text-sm">{{ $message }}</div>
+                                @enderror 
+                            </div>
 
-                        <!--Register button-->
-                        <div class="flex items-center justify-between pb-6">
-                            <p class="mb-0 me-2">Don't have an account?</p>
-                            <button
-                            type="submit"
-                            class="bg-teal-600 mb-3inline-block rounded border-2 border-danger px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-danger transition duration-150 ease-in-out hover:border-danger-600 hover:bg-danger-50/50 hover:text-danger-600 focus:border-danger-600 focus:bg-danger-50/50 focus:text-danger-600 focus:outline-none focus:ring-0 active:border-danger-700 active:text-danger-700 dark:hover:bg-rose-950 dark:focus:bg-rose-950"
-                            data-twe-ripple-init
-                            data-twe-ripple-color="light">
-                            Register
-                            </button>
-                        </div>
+                            <!--Submit button-->
+                            <div class="mb-12 pb-1 pt-1 text-center">
+                                <button
+                                class="bg-teal-600 cursor-pointer hover:opacity-90 mb-3 inline-block w-full rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-dark-3 transition duration-150 ease-in-out hover:shadow-dark-2 focus:shadow-dark-2 focus:outline-none focus:ring-0 active:shadow-dark-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+                                type="submit"
+                                data-twe-ripple-init
+                                data-twe-ripple-color="light">
+                                Log in
+                                </button>
+
+                                <!--Forgot password link-->
+                                <a href="#!" class="text-black">Forgot password?</a>
+                            </div>
+
+                            <!--Register button-->
+                            <div class="flex items-center justify-between pb-6">
+                                <p class="mb-0 me-2 text-black">Don't have an account?</p>
+                                <a
+                                href="{{ route('auth.register') }} "
+                                class="inline-block rounded border-2 border-danger px-6 border-black text-black"
+                                data-twe-ripple-init
+                                data-twe-ripple-color="light">
+                                Register
+                                </a>
+                            </div>
                         </form>
                     </div>
                     </div>
